@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROFILE</title>
-</head>
-<body>
-    <h1> HALAMAN PROFILE </h1>
-</body>
-</html>
+@extends('layouts.main')
+
+@section('content')
+    <h1>HALAMAN PROFILE</h1>
+    <p>Nama : {{ $name }}</p>
+    <p>NIM : {{ $nim }}</p>
+    <p>Program Studi : {{ $prodi }}</p>
+    <img src="images/{{ $gambar }}" width="200px"/>
+
+@endsection
