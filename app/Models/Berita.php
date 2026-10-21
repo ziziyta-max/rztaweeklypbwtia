@@ -6,18 +6,30 @@ use Illuminate\Database\Eloquent\Model;
 
 class Berita extends Model
 {
-    static $data_berita = [
-    [
-        "judul" => "Indonesia Juara ASEAN",
-        "slug" => "indonesia-juara-asean",
-        "penulis" => "jita",
-        "konten" => "indonesia menang"
-    ],
-    [
-        "judul" => "Indonesia Juara Makan Pedas",
-        "slug" => "indonesia-juara-makan-pedas",
-        "penulis" => "aku",
-        "konten" => "orang indonesia suka makan seblak"
-    ]
-];
+    
+public function ambildata ()
+{
+    
+    return $data_berita;
+}
+public static function getBerita($slug)
+{
+ $beritas = self::$data_berita;
+ $singlenews = [];
+    
+ foreach ($data_berita as $berita) 
+     {
+         if($berita['slug'] == $slug) 
+         {
+             $singlenews = $berita;
+         }
+     }
+ return $singlenews;
+}
+public static function getJudul($slug)
+{
+  $berita = self::getBerita($slug);
+
+  return $berita ["judul"];
+}
 }
