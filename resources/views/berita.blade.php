@@ -2,8 +2,7 @@
 
 @section('content')
 
-    @foreach ($data_berita as $berita)
-
+    @foreach ($beritas as $berita)
         <h2>
             <a href="/berita/{{ $berita['slug'] }}">
                 {{ $berita['judul'] }}
@@ -13,8 +12,6 @@
         <h5>{{ $berita['penulis'] }}</h5>
 
         <p>{{ $berita['konten'] }}</p>
-
     @endforeach
 
 @endsection
-
